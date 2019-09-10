@@ -43,14 +43,14 @@ function App(auth) {
         <Fragment>
 
         {!auth && <Redirect to='/login' />}
-        
+
         <section className='container-fluid m-0 p-0' id='page-wrap'>
         <Alert />
           <div className="row m-0 p-0">
             <Switch>
             <Route path='/register' component={Register} />
             <Route path='/login' component={Login} />
-            <Route path='/' exact component={Vatalia} />
+            <Route exact path='/' component={Vatalia} />
             <Route path='/services' component={Services} />
             {/* <PrivateRoute exact path='/dashboard' component={Dashboard} /> */}
             <PrivateRoute exact path='/addService' component={AddService} />
