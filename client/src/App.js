@@ -50,7 +50,7 @@ function App(auth) {
             <Route path='/login' component={Login} />
             <Route path='/' exact component={Vatalia} />
             <Route path='/services' component={Services} />
-            <PrivateRoute exact path='/dashboard' component={Dashboard} />
+            {/* <PrivateRoute exact path='/dashboard' component={Dashboard} /> */}
             <PrivateRoute exact path='/addService' component={AddService} />
             <PrivateRoute exact path='/update/:id' component={Service_UD} />
             <PrivateRoute exact path='/bookAppt/:id' component={AddAppt} />

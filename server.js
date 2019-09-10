@@ -8,9 +8,6 @@ const path = require('path');
 //Connect to Database
 connectDB();
 
-// app.get("/", (req, res) => {
-// 	res.send('API is running')
-// })
 
 app.use(express.json({extended: false}));
 
@@ -74,5 +71,5 @@ if(process.env.NODE_ENV === "production") {
  	})
  }
 
+ 
 const PORT = 5000 || process.env.PORT;
-app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
