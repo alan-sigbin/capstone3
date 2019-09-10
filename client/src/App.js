@@ -41,7 +41,9 @@ function App(auth) {
     <Sidebar />     
       <Router>
         <Fragment>
+
         {!auth && <Redirect to='/login' />}
+        
         <section className='container-fluid m-0 p-0' id='page-wrap'>
         <Alert />
           <div className="row m-0 p-0">
