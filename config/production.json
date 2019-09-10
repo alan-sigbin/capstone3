@@ -1,4 +1,4 @@
 {
-	"mongoURI": "mongodb+srv://allan:1800401a@capstone3-k2tkr.mongodb.net/test?retryWrites=true&w=majority",
-	"jwtToken": "mysecrettoken"
+	// "mongoURI": "mongodb+srv://allan:1800401a@capstone3-k2tkr.mongodb.net/test?retryWrites=true&w=majority",
+	// "jwtToken": "mysecrettoken"
 }	

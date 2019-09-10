@@ -3,7 +3,7 @@ const connectDB = require("./config/db");
 const app = express();
 const uuid = require('uuid/v4');
 const stripe = require("stripe")("sk_test_d7FW0NFlisO3lWIivjGKZSt800147YgHhx");
-const path = require('path');
+// const path = require('path');
 
 //Connect to Database
 connectDB();
@@ -48,7 +48,6 @@ app.post("/checkout", async (req, res) => {
 		  idempotency_key
 		}
 	  );
-	//   console.log("Charge:", { charge });
 	  status = "success";
 	} catch (error) {
 	  console.error("Error:", error);
@@ -64,12 +63,13 @@ app.use("/api/auth", require("./routes/api/auth"));
 app.use("/api/service", require("./routes/api/service"));
 app.use("/api/appt", require("./routes/api/appointment"));
 
-if(process.env.NODE_ENV === "production") {
- 	app.use(express.static("client/build"));
- 	app.get("*", (req, res) =>{
- 		res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
- 	})
- }
+// if(process.env.NODE_ENV === "production") {
+//  	app.use(express.static("client/build"));
+//  	app.get("*", (req, res) =>{
+//  		res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
+//  	})
+//  }
 
  
-const PORT = process.env.PORT || 5000;
+const PORT = 5000 || process.env.PORT;
+app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));

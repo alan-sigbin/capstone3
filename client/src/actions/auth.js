@@ -64,6 +64,7 @@ export const register = ({guestname, email, password}) => async dispatch => {
 
 //Login user
 export const login = (email, password) => async dispatch => {
+
 	const config = {
 		headers: {
 			'Content-Type': "application/json"
@@ -80,7 +81,6 @@ export const login = (email, password) => async dispatch => {
 		});
 
 		dispatch(loadUser());
-		window.location.href="/vatalia";
 	}catch(err) {
 		const errors = err.response.data.errors;
 		if(errors) {
