@@ -11,7 +11,6 @@ import AddService from "./components/forms/AddService";
 import Services from "./components/dashboard/Services";
 import Vatalia from "./components/dashboard/Vatalia";
 import PrivateRoute from "./components/routing/PrivateRoute";
-// import Home from "./components/dashboard/Home";
 import Login from "./components/auth/Login";
 import logo from "./images/logo.jpg";
 
@@ -24,8 +23,7 @@ import Service_UD from './components/forms/Service_UD';
 import AddAppt from './components/forms/AddAppt';
 import ManageAppointments from './components/dashboard/ManageAppointments';
 import Sidebar from "./components/layouts/Sidebar";
-// import auth from './reducers/auth';
-// import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { Redirect } from 'react-router-dom';
 
 if(localStorage.token) {
   setAuthToken(localStorage.token);
@@ -36,31 +34,31 @@ function App(auth) {
     store.dispatch(loadUser());
   }, [])
 
+  
   return (
     <div className="container-fluid m-0 p-0">
     <Provider store={store}>
     <Sidebar />     
       <Router>
         <Fragment>
-          {/* <Navbar />  */}
-          <section className='container-fluid m-0 p-0' id='page-wrap'>
-                    <Alert />
-              <div className="row m-0 p-0">
-                    <Switch>
-                    <Route path='/register' component={Register} />
-                    <Route path='/login' component={Login} />
-                    <Route path='/vatalia' component={Vatalia} />
-                    <Route path='/services' component={Services} />
-                    <PrivateRoute exact path='/dashboard' component={Dashboard} />
-                    <PrivateRoute exact path='/addService' component={AddService} />
-                    <PrivateRoute exact path='/update/:id' component={Service_UD} />
-                    <PrivateRoute exact path='/bookAppt/:id' component={AddAppt} />
-                    <PrivateRoute exact path='/manage_appts' component={ManageAppointments} />
-                    <PrivateRoute exact path='/viewmyappt/:id' component={ViewMyAppt} />        
-                    </Switch>
-              </div>
-            
-          </section>
+        {!auth && <Redirect to='/login' />}
+        <section className='container-fluid m-0 p-0' id='page-wrap'>
+        <Alert />
+          <div className="row m-0 p-0">
+            <Switch>
+            <Route path='/register' component={Register} />
+            <Route path='/login' component={Login} />
+            <Route path='/' exact component={Vatalia} />
+            <Route path='/services' component={Services} />
+            <PrivateRoute exact path='/dashboard' component={Dashboard} />
+            <PrivateRoute exact path='/addService' component={AddService} />
+            <PrivateRoute exact path='/update/:id' component={Service_UD} />
+            <PrivateRoute exact path='/bookAppt/:id' component={AddAppt} />
+            <PrivateRoute exact path='/manage_appts' component={ManageAppointments} />
+            <PrivateRoute exact path='/viewmyappt/:id' component={ViewMyAppt} />        
+            </Switch>
+          </div>    
+        </section>
         </Fragment>
       </Router>
     </Provider>

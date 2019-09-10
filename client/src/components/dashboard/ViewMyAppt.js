@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState} from "react";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
-import {getAppt, updatePaidStatus} from "../../actions/appointment";
+import {getAppt} from "../../actions/appointment";
 import StripeCheckout from 'react-stripe-checkout';
 import axios from "axios";
 import { setAlert } from "../../actions/alert";

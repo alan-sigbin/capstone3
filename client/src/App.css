@@ -303,10 +303,6 @@ box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.42);
 
 .para-text {
   font-family: 'Lobster', cursive;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   color: white;
   font-size: 20px;
   font-style: italic;

@@ -11,7 +11,7 @@ return(
     <Fragment>
         <div className="container-fluid">
             <div className="banner row">
-                <div className="col-md-12">
+                <div className="col-sm-12">
                     <div>
                         <h1 className="lobster-font lightfont">
                             Vatalia Bikes Co.
@@ -22,17 +22,21 @@ return(
                     </div>
                 </div>
             </div>
+
+        <div className="container-fluid m-0 p-0">   
             <div className="row">
-                <div className="col-md-6 m-0 p-0">
-                <div className="parallax">
-                    <p className="para-text">
-                        We aim to be the most preferred bicycle store and maintenance provider. With our main goals of delivering high value, high quality, good service and providing customer satisfaction.
-                    </p>
+            
+                <div className="col-sm-6 m-0 p-0">
+                    <div className="parallax">
+                        <p className="para-text p-5">
+                            We aim to be the most preferred bicycle store and maintenance provider. With our main goals of delivering high value, high quality, good service and providing customer satisfaction.
+                        </p>
+                    </div>
                 </div>
-                </div>
-                <div className="col-md-6 parallax mx-0 px-0">
+
+                <div className="col-sm-6 parallax mx-0 px-0">
                     <div className="row dark-overlay mx-0 px-0">
-                        <div className="col-md-6 p-3">
+                        <div className="col-sm-6 p-3">
                             <div className="card" style={{border: "0px"}}>
                             <div className="abtimagecontainer parallax">
                             <div className="dark-overlay">
@@ -50,7 +54,7 @@ return(
                                 </div>
                             </div>
                         </div>
-                        <div className="col-md-6 py-3">
+                        <div className="col-sm-6 py-3">
                             <div className="card" style={{border: "0px"}}>
                             <div className="abtimagecontainer parallax">
                             <div className="dark-overlay">
@@ -67,7 +71,7 @@ return(
                                 </div>
                             </div>
                         </div>
-                        <div className="col-md-6 py-3">
+                        <div className="col-sm-6 py-3">
                             <div className="card" style={{border: "0px"}}>
                             <div className="abtimagecontainer parallax">
                             <div className="dark-overlay">
@@ -84,7 +88,7 @@ return(
                                 </div>
                             </div>
                         </div>
-                        <div className="col-md-6 py-3">
+                        <div className="col-sm-6 py-3">
                             <div className="card" style={{border: "0px"}}>
                             <div className="abtimagecontainer parallax">
                             <div className="dark-overlay">
@@ -105,6 +109,7 @@ return(
                 </div>
             </div>
         </div>
+    </div>
     </Fragment>
     )
 };

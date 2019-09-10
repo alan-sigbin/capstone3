@@ -2,7 +2,6 @@ import React, {Fragment} from "react";
 import PropTypes from "prop-types";
 import { slide as Menu } from "react-burger-menu";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
 import { logout } from "../../actions/auth";
 
 
@@ -34,7 +33,7 @@ const Sidebar = ({auth, logout}) => {
 
   return (
     <Menu>
-      <a className='navbar-brand' href="/vatalia">Vatalia</a>
+      <a className='navbar-brand' href="/">Vatalia</a>
       <div className="collapse navbar-collapse" id="navbarNav">
 				{!auth.loading && (
 					<Fragment>
